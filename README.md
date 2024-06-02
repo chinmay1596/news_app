@@ -29,7 +29,7 @@ A web-based application that allows users to search for news articles based on k
 
     ```bash
     git clone 
-    cd news-search-app
+    cd news_app
     ```
 
 2. **Create a virtual environment:**
