@@ -9,7 +9,7 @@ A web-based application that allows users to search for news articles based on k
 
 - User registration and authentication (signup, login, logout)
 - Search for news articles based on a keyword
-- Store search results locally
+- Store search results
 - View a list of previous searches and their results
 - Open original news articles in a new tab
 - Refresh search results to fetch the latest articles
