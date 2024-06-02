@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4">Your Searches</h2>
+    <ul class="list-group">
+        {% for search in searches %}
+        <li class="list-group-item">
+            <h5>
+                <a href="{% url 'results' search.id %}">{{ search.keyword }}</a>
+                <small class="text-muted">({{ search.created_at }})</small>
+            </h5>
+            <ul>
+                {% for article in search.article_set.all %}
+                <li>
+                    <a href="{{ article.url }}" target="_blank">{{ article.title }}</a>
+                    <small class="text-muted"> - {{ article.published_at }}</small>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

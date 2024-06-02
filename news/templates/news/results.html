@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-center">Search results for "{{ search.keyword }}"</h2>
+        <form method="post" action="{% url 'refresh_results' search.id %}">
+            {% csrf_token %}
+            <button class="btn btn-secondary" type="submit">Refresh</button>
+        </form>
+    </div>
+
+    <form method="get" class="mb-4">
+        <div class="form-row">
+            <div class="col-md-3">
+                <input type="date" name="date" class="form-control" placeholder="Date Published" value="{{ request.GET.date }}">
+            </div>
+            <div class="col-md-3">
+                <input type="text" name="source" class="form-control" placeholder="Source Name" value="{{ request.GET.source }}">
+            </div>
+            <div class="col-md-3 mt-2">
+                <button type="submit" class="btn btn-primary">Filter</button>
+            </div>
+        </div>
+    </form>
+
+    <ul class="list-group">
+        {% for article in articles %}
+        <li class="list-group-item">
+            <a href="{{ article.url }}" target="_blank" class="font-weight-bold">{{ article.title }}</a>
+            <p>{{ article.description }}</p>
+            <p class="text-muted">Published at: {{ article.published_at }} | Source: {{ article.source_name }}</p>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
