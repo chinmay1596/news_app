@@ -73,7 +73,7 @@ A web-based application that allows users to search for news articles based on k
 
 8. **Open the application in your web browser:**
 
-    Visit `http://127.0.0.1:8000` to access the application.
+    Visit `http://127.0.0.1:8000/login/` to access the application.
 
 
 
