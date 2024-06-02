@@ -93,7 +93,6 @@ A web-based application that allows users to search for news articles based on k
 **Overall Experience:**
 Working on this project was a rewarding experience. It involved setting up user authentication, integrating with an external API (News API), and implementing features such as search, filtering, and displaying results. I also learned a lot about managing environment variables securely using `python-dotenv` and structuring a Django project effectively.
 
-```
 
 
 
